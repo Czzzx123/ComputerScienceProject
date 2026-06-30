@@ -1,0 +1,51 @@
+[
+  {
+    "id": "p001",
+    "system": "igcse",
+    "systemName": "IGCSE 0478",
+    "name": "学生成绩管理系统",
+    "summary": "控制台程序，实现学生成绩的录入、查询、统计与排名。覆盖一维数组、循环、条件判断等核心语法。",
+    "requirements": [
+      "支持添加/删除学生及成绩",
+      "计算班级平均分、最高分、最低分",
+      "按成绩降序排列并输出排名表"
+    ],
+    "sourceUrl": "https://github.com/example/grade-manager",
+    "demoUrl": "https://replit.com/@example/grade-manager",
+    "difficulty": "入门",
+    "highlights": ["数组遍历与操作", "冒泡/选择排序算法", "控制台输入输出格式化"]
+  },
+  {
+    "id": "p002",
+    "system": "alevel",
+    "systemName": "A Level 9618",
+    "name": "图书借阅管理系统",
+    "summary": "面向对象程序设计项目，用 Java 实现图书、读者、借阅记录三大实体及对应的增删改查操作。",
+    "requirements": [
+      "设计 Book / Reader / BorrowRecord 三个类",
+      "实现图书借出与归还逻辑",
+      "支持按书名、作者、ISBN 模糊搜索",
+      "数据持久化到文本文件"
+    ],
+    "sourceUrl": "https://github.com/example/library-system",
+    "demoUrl": "https://replit.com/@example/library-system",
+    "difficulty": "中等",
+    "highlights": ["OOP 类设计", "文件 I/O 读写", "ArrayList 集合操作", "异常处理 try-catch"]
+  },
+  {
+    "id": "p003",
+    "system": "ap",
+    "systemName": "AP CSA",
+    "name": "迷宫生成与寻路",
+    "summary": "综合算法项目，实现随机迷宫生成（DFS 回溯算法）与最短路径搜索（BFS 广度优先）。",
+    "requirements": [
+      "用二维数组建模迷宫",
+      "实现 DFS 随机迷宫生成",
+      "实现 BFS 最短路径寻找并可视化输出"
+    ],
+    "sourceUrl": "https://github.com/example/maze-solver",
+    "demoUrl": "https://replit.com/@example/maze-solver",
+    "difficulty": "进阶",
+    "highlights": ["二维数组建模", "DFS 回溯算法", "BFS 广度优先搜索", "控制台可视化"]
+  }
+]

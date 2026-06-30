@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程介绍 — 国际方向计算机课程</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <site-nav active="courses"></site-nav>
+
+  <main class="page-content container py-5">
+    <h2 class="section-title text-center">课程介绍</h2>
+    <p class="section-subtitle text-center">三大国际计算机课程体系，分层覆盖不同学习阶段</p>
+
+    <!-- ===== 加载提示 ===== -->
+    <div v-if="loading" class="text-center text-muted py-5">
+      <div class="spinner-border text-primary mb-3" role="status"></div>
+      <p>加载课程数据...</p>
+    </div>
+
+    <!-- ===== 正常内容（数据加载后显示） ===== -->
+    <div v-else>
+      <!--
+      ★ 学生开发区域 ★
+      功能要点：
+      1. 课程体系标签切换（AP / A Level / IGCSE）
+      2. 单门课程折叠/展开面板
+      3. 课程数据已通过 fetch 加载到 this.courses
+
+      数据结构参考 data/courses.json
+      提示：用 v-for 遍历 courses，@click 控制折叠状态
+      -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center text-muted py-5">
+          <i class="bi bi-book display-1 d-block mb-3"></i>
+          <p>【课程介绍页面 — 待学生开发】</p>
+          <p class="small">数据已加载成功！共 {{ courses.length }} 个课程体系。</p>
+          <p class="small">数据文件：<code>data/courses.json</code></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <site-footer></site-footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/footer.js"></script>
+
+<script>
+Vue.createApp({
+  components: { SiteNav, SiteFooter },
+
+  data() {
+    return {
+      courses: [],    // 存放从 JSON 加载的课程数据
+      loading: true,  // 加载中状态
+      // ★ 学生在这里添加更多状态：activeSystem, openIds 等
+    }
+  },
+
+  mounted() {
+    // ★ fetch 模式：从 JSON 文件加载数据（学生可参考此写法用于其他页面）
+    fetch('data/courses.json')
+      .then(function (res) { return res.json() })
+      .then(function (data) {
+        this.courses = data
+        this.loading = false
+      }.bind(this))
+      .catch(function (err) {
+        console.error('课程数据加载失败:', err)
+        this.loading = false
+      }.bind(this))
+  },
+}).mount('#app')
+</script>
+</body>
+</html>

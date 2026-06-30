@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工具与答疑 — 国际方向计算机课程</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <site-nav active="tools-faq"></site-nav>
+
+  <main class="page-content container py-5">
+    <h2 class="section-title text-center">工具与答疑</h2>
+    <p class="section-subtitle text-center">日常学习工具汇总 & 高频问题统一答疑</p>
+
+    <div v-if="loading" class="text-center text-muted py-5">
+      <div class="spinner-border text-primary mb-3" role="status"></div>
+      <p>加载数据...</p>
+    </div>
+
+    <div v-else>
+      <!--
+      ★ 学生开发区域 ★
+      功能要点：
+      1. 常用工具外链卡片
+      2. FAQ 折叠面板（按分类整理，支持关键词搜索）
+
+      数据已加载到 this.faqList 和 this.toolList
+      数据结构参考 data/faq.json（含 faq 和 tools 两个字段）
+      -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center text-muted py-5">
+          <i class="bi bi-question-circle display-1 d-block mb-3"></i>
+          <p>【工具与答疑页面 — 待学生开发】</p>
+          <p class="small">数据已加载成功！共 {{ toolList.length }} 个工具，{{ faqList.length }} 个 FAQ 分类。</p>
+          <p class="small">数据文件：<code>data/faq.json</code></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <site-footer></site-footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/footer.js"></script>
+
+<script>
+Vue.createApp({
+  components: { SiteNav, SiteFooter },
+
+  data() {
+    return {
+      faqList: [],    // FAQ 数据
+      toolList: [],   // 工具链接数据
+      loading: true,
+      // ★ 学生在这里添加：faqOpen 状态、搜索关键词等
+    }
+  },
+
+  mounted() {
+    fetch('data/faq.json')
+      .then(function (res) { return res.json() })
+      .then(function (data) {
+        this.faqList = data.faq
+        this.toolList = data.tools
+        this.loading = false
+      }.bind(this))
+      .catch(function (err) {
+        console.error('FAQ 数据加载失败:', err)
+        this.loading = false
+      }.bind(this))
+  },
+}).mount('#app')
+</script>
+</body>
+</html>
