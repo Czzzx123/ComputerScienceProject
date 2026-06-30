@@ -1,0 +1,148 @@
+/* ===================================
+   IW 国际计算机课程网站 — 全局样式
+   基于 Bootstrap 5.3 扩展
+   =================================== */
+
+:root {
+  --iw-primary: #1a56db;
+  --iw-primary-dark: #1340a0;
+  --iw-accent: #e9f0ff;
+  --iw-bg: #f8f9fc;
+  --iw-text: #1e293b;
+  --iw-text-light: #64748b;
+  --iw-border: #e2e8f0;
+  --iw-nav-height: 64px;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  color: var(--iw-text);
+  background: var(--iw-bg);
+  padding-top: var(--iw-nav-height);
+}
+
+/* ---------- 导航栏 ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s;
+}
+.navbar-brand {
+  color: var(--iw-primary) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.nav-link {
+  color: var(--iw-text) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--iw-primary) !important;
+  background: var(--iw-accent);
+}
+
+/* ---------- 页面内容 ---------- */
+.page-content {
+  min-height: calc(100vh - var(--iw-nav-height) - 160px);
+}
+
+/* ---------- 通用 section ---------- */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--iw-text);
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  color: var(--iw-text-light);
+  margin-bottom: 2rem;
+}
+
+/* ---------- 首页 Hero ---------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--iw-primary) 0%, #2563eb 50%, #4f46e5 100%);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+/* ---------- 课程折叠面板 ---------- */
+.course-card {
+  border: 1px solid var(--iw-border);
+  border-radius: 10px;
+  background: #fff;
+  transition: box-shadow 0.25s;
+}
+.course-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.course-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--iw-border);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.course-card .card-header:hover {
+  background: var(--iw-accent);
+}
+
+/* ---------- 资源 / 项目 / FAQ 项 ---------- */
+.resource-item,
+.project-card,
+.faq-item {
+  border: 1px solid var(--iw-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+/* ---------- 标签 ---------- */
+.tag-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.tag-new {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* ---------- 搜索框 ---------- */
+.search-box {
+  max-width: 480px;
+  position: relative;
+}
+.search-box .form-control {
+  border-radius: 24px;
+  padding-left: 2.5rem;
+  border-color: var(--iw-border);
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--iw-text-light);
+  z-index: 5;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--iw-border);
+  font-size: 0.9rem;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 768px) {
+  .hero-section { padding: 2.5rem 0; }
+  .hero-section h1 { font-size: 1.6rem; }
+  .section-title { font-size: 1.4rem; }
+}

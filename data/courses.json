@@ -1,0 +1,47 @@
+[
+  {
+    "system": "ap",
+    "systemName": "AP Computer Science",
+    "systemDesc": "美国大学先修课程 (Advanced Placement)，包含计算机科学 A 与计算机科学原理两门课程。",
+    "courses": [
+      {
+        "id": "ap-csa",
+        "name": "AP Computer Science A",
+        "desc": "以 Java 语言为核心，深入学习面向对象程序设计、数据结构与算法分析。",
+        "syllabus": "https://apcentral.collegeboard.org/courses/ap-computer-science-a"
+      },
+      {
+        "id": "ap-csp",
+        "name": "AP Computer Science Principles",
+        "desc": "涵盖计算机科学基础概念，包括编程、网络、数据等广泛领域的入门知识。",
+        "syllabus": "https://apcentral.collegeboard.org/courses/ap-computer-science-principles"
+      }
+    ]
+  },
+  {
+    "system": "alevel",
+    "systemName": "剑桥 CIE AS & A Level",
+    "systemDesc": "剑桥国际 AS & A Level 计算机科学 (9618)，覆盖计算机系统、算法、编程与计算思维。",
+    "courses": [
+      {
+        "id": "alevel-9618",
+        "name": "9618 Computer Science",
+        "desc": "剑桥 AS & A Level 计算机科学课程，内容涵盖计算机组成原理、网络、数据库、算法设计与软件开发。",
+        "syllabus": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-computer-science-9618/"
+      }
+    ]
+  },
+  {
+    "system": "igcse",
+    "systemName": "剑桥 IGCSE",
+    "systemDesc": "剑桥国际中学教育普通证书 (IGCSE)，0478 计算机科学面向初中阶段学生。",
+    "courses": [
+      {
+        "id": "igcse-0478",
+        "name": "0478 Computer Science",
+        "desc": "剑桥 IGCSE 计算机科学课程，包含计算机系统基础、数据表示与编程入门。",
+        "syllabus": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-computer-science-0478/"
+      }
+    ]
+  }
+]

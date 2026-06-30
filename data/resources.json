@@ -1,0 +1,44 @@
+[
+  {
+    "id": "r001",
+    "system": "ap",
+    "systemName": "AP Computer Science",
+    "type": "syllabus",
+    "typeName": "考纲",
+    "title": "AP CSA 2025 官方课程大纲",
+    "desc": "College Board 发布的最新 AP 计算机科学 A 课程框架。",
+    "format": "PDF",
+    "version": "2025",
+    "updated": "2025-06-01",
+    "isNew": true,
+    "file": "public/files/.gitkeep"
+  },
+  {
+    "id": "r002",
+    "system": "alevel",
+    "systemName": "剑桥 AS & A Level",
+    "type": "syllabus",
+    "typeName": "考纲",
+    "title": "9618 AS & A Level 最新考纲",
+    "desc": "剑桥国际 9618 计算机科学 2025-2027 考纲文档。",
+    "format": "PDF",
+    "version": "2025-2027",
+    "updated": "2025-05-15",
+    "isNew": true,
+    "file": "public/files/.gitkeep"
+  },
+  {
+    "id": "r003",
+    "system": "igcse",
+    "systemName": "剑桥 IGCSE",
+    "type": "syllabus",
+    "typeName": "考纲",
+    "title": "0478 IGCSE 最新考纲",
+    "desc": "剑桥国际 0478 计算机科学 2025-2027 考纲文档。",
+    "format": "PDF",
+    "version": "2025-2027",
+    "updated": "2025-05-15",
+    "isNew": false,
+    "file": "public/files/.gitkeep"
+  }
+]

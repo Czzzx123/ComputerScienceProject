@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页 — 国际方向计算机课程</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- 导航栏：通过 active 属性标记当前页面 -->
+  <site-nav active="home"></site-nav>
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero-section">
+    <div class="container text-center py-4">
+      <h1 class="mb-3">国际方向计算机课程</h1>
+      <p class="lead mb-0">
+        面向国际教育体系的计算机科学课程平台<br>
+        覆盖 AP、剑桥 AS & A Level、IGCSE 三大课程体系
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 课程概况 ==================== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center">开设课程体系</h2>
+    <p class="section-subtitle text-center">三大国际计算机课程体系，分层递进，满足不同阶段学习需求</p>
+    <div class="row g-4 mt-2">
+      <!-- v-for 循环渲染卡片，数据来自下方 data() -->
+      <div class="col-md-4" v-for="card in courseCards" :key="card.id">
+        <div class="card h-100 border-0 shadow-sm text-center p-4">
+          <div class="card-body">
+            <div class="display-6 mb-3">{{ card.emoji }}</div>
+            <h5 class="card-title fw-bold">{{ card.title }}</h5>
+            <p class="card-text text-muted small">{{ card.desc }}</p>
+            <ul class="list-unstyled text-start small">
+              <li v-for="c in card.courses" :key="c">✓ {{ c }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 授课理念 ==================== -->
+  <section class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-title">授课理念</h2>
+        <p class="section-subtitle">知行合一，代码驱动思维</p>
+        <div class="row g-4 mt-1 text-start">
+          <div class="col-sm-6" v-for="idea in ideas" :key="idea.title">
+            <div class="d-flex">
+              <div class="me-3 fs-4 text-primary"><i :class="'bi bi-' + idea.icon"></i></div>
+              <div>
+                <h6 class="fw-bold">{{ idea.title }}</h6>
+                <p class="small text-muted">{{ idea.desc }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <site-footer></site-footer>
+</div>
+
+<!-- Bootstrap JS（导航折叠按钮） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Vue 3 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<!-- 公共组件（导航栏 / 页脚 / 站点配置） -->
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/footer.js"></script>
+
+<!-- ==================== 首页 Vue 逻辑 ==================== -->
+<script>
+Vue.createApp({
+  components: { SiteNav, SiteFooter },
+
+  data() {
+    return {
+      courseCards: [
+        {
+          id: 'ap', emoji: '🇺🇸',
+          title: 'AP 计算机科学',
+          desc: '美国大学先修课程，聚焦 Java 面向对象编程与算法设计。',
+          courses: ['AP Computer Science A', 'AP Computer Science Principles'],
+        },
+        {
+          id: 'alevel', emoji: '🇬🇧',
+          title: '剑桥 AS & A Level',
+          desc: '深入学习计算机系统、算法与编程，为大学阶段打下扎实基础。',
+          courses: ['9618 Computer Science'],
+        },
+        {
+          id: 'igcse', emoji: '🎓',
+          title: '剑桥 IGCSE',
+          desc: '计算机科学入门课程，覆盖计算机系统基础与编程思维启蒙。',
+          courses: ['0478 Computer Science'],
+        },
+      ],
+
+      ideas: [
+        { icon: 'pencil-square', title: '项目驱动',   desc: '每门课程配套综合性实验项目，在实践中掌握编程技能。' },
+        { icon: 'diagram-3',     title: '分层递进',   desc: 'IGCSE → A Level → AP 三级递升，适配不同阶段学生。' },
+        { icon: 'globe2',        title: '国际标准',   desc: '课程内容与最新国际考纲同步更新，接轨海外升学要求。' },
+        { icon: 'people',        title: '师生共创',   desc: '网站由学生团队自主开发维护，提供真实协作体验。' },
+      ],
+    }
+  },
+}).mount('#app')
+</script>
+</body>
+</html>

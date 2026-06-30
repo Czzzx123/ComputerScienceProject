@@ -1,0 +1,28 @@
+# 操作系统生成文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code
+.claude/
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node / Vite（如果后续切换到构建工具）
+node_modules/
+dist/
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 临时文件
+*.tmp
+*.log
+~$*
