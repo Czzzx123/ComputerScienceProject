@@ -1,0 +1,38 @@
+{
+    "courseCards": [
+        {
+            "id": "ap",
+            "emoji": "🇺🇸",
+            "title": "AP 计算机科学",
+            "desc": "美国大学先修课程，聚焦 Java 面向对象编程与算法设计。",
+            "courses": [
+                "AP Computer Science A",
+                "AP Computer Science Principles"
+            ]
+        },
+        {
+            "id": "alevel",
+            "emoji": "🇬🇧",
+            "title": "剑桥 AS & A Level",
+            "desc": "深入学习计算机系统、算法与编程，为大学阶段打下扎实基础。",
+            "courses": [
+                "9618 Computer Science"
+            ]
+        },
+        {
+            "id": "igcse",
+            "emoji": "🎓",
+            "title": "剑桥 IGCSE",
+            "desc": "计算机科学入门课程，覆盖计算机系统基础与编程思维启蒙。",
+            "courses": [
+                "0478 Computer Science"
+            ]
+        }
+    ],
+    "ideas": [
+        { "icon": "pencil-square", "title": "项目驱动", "desc": "每门课程配套综合性实验项目，在实践中掌握编程技能。" },
+        { "icon": "diagram-3", "title": "分层递进", "desc": "IGCSE → A Level → AP 三级递升，适配不同阶段学生。" },
+        { "icon": "globe2", "title": "国际标准", "desc": "课程内容与最新国际考纲同步更新，接轨海外升学要求。" },
+        { "icon": "people", "title": "师生共创", "desc": "网站由学生团队自主开发维护，提供真实协作体验。" }
+    ]
+}
